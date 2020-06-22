@@ -19,7 +19,7 @@ while True:
     print('GS creds authorized')
 
     print('Checking for new Volunteers...')
-    vt = Airtable(base_key = 'apphIHV5ugYbcmcC2', table_name = 'Volunteers', api_key = 'keyorzug9EjOu04m9')
+    vt = Airtable(base_key = '###', table_name = '###', api_key = '###')
     print('AT creds authorized') 
     newvol_formula = '{Connections}!=""'
     vf = pd.read_csv('volunteer_list.csv')
@@ -49,7 +49,7 @@ while True:
 
             ns_formula = 'FIND("%s",{Relationships to Volunteers})' % create_vol
 
-            vot = Airtable(base_key = 'apphIHV5ugYbcmcC2', table_name = 'Voters', api_key = 'keyorzug9EjOu04m9')
+            vot = Airtable(base_key = '###', table_name = '###', api_key = '###')
 
             new_sheet = vot.get_records(fields=['VANID', 'Full Name',  'Address', 'Preferred Phone', 'Support Scores'], formula=ns_formula, sort='Full Name')
 
@@ -68,9 +68,9 @@ while True:
 
             ch = client.create(create_vol + ' - ' + 'People You Know in District 26')
             ch.share(create_email, perm_type='user', role='writer', notify=True, email_message=message)
-            ch.share('iamtimzhu@gmail.com', perm_type='user', role='writer', notify=True, email_message=message)
-            ch.share('mishkaks@gmail.com', perm_type='user', role='writer', notify=True, email_message=message)
-            ch.share('ikaikahussey@gmail.com', perm_type='user', role='writer', notify=True, email_message=message)
+            ch.share('###', perm_type='user', role='writer', notify=True, email_message=message)
+            ch.share('###', perm_type='user', role='writer', notify=True, email_message=message)
+            ch.share('###', perm_type='user', role='writer', notify=True, email_message=message)
             print('Spreadsheet shared with emails.')
             create_spreadsheet_id = ch.id
             print(ch.id)
@@ -84,7 +84,7 @@ while True:
             worksheet.update_acell('I2', '=COUNTIF(F:F,"1 - Strong Support") + COUNTIF(F:F,"2 - Lean Support") + COUNTIF(F:F,"3 - Undecided") + COUNTIF(F:F,"4 - Lean Opposed") + COUNTIF(F:F,"5 - Strong Opposed")')
             worksheet.update_acell('G1', '')
             worksheet.update_acell('G2', '')
-            worksheet.update_acell('H4', '=HYPERLINK("https://docs.google.com/document/d/1VObQxGR4D8ssjGzxN74mEwzecpzcIShuVd21nbLS97g/edit?usp=sharing", "How to talk to your friends about Kim Coco!")')
+            worksheet.update_acell('H4', '=HYPERLINK("###", "How to talk to your friends about Kim Coco!")')
             fmt = cellFormat(
             textFormat=textFormat(bold=True, foregroundColor=color(1,0,0), fontSize=14,)
             )
@@ -153,7 +153,7 @@ while True:
 
             print(create_vol + ' spreadsheet created at spreadsheet ID - ' + create_spreadsheet_id)
 
-            master_list_id = '1Pj79IiP2U6H2b1NpeICjx-op3NTvcjd_iAZ3vebpEUU'
+            master_list_id = '###'
             mh = client.open_by_key(master_list_id)
             master_sheet = mh.get_worksheet(0)
             master_sheet.append_row(values=[create_vol, create_phone, create_email, create_spreadsheet_id, spreadsheet_url])
@@ -182,7 +182,7 @@ while True:
 
     print('Checking for new Connections...')
 
-    at = Airtable(base_key = 'apphIHV5ugYbcmcC2', table_name = 'Connections', api_key = 'keyorzug9EjOu04m9')
+    at = Airtable(base_key = '###', table_name = '###', api_key = '###')
     print('AT creds authorized')
 
     df = pd.read_csv('at_conn_ids.csv')
@@ -205,7 +205,7 @@ while True:
 
             rest_counter = 0
 
-            at1 = Airtable(base_key = 'apphIHV5ugYbcmcC2', table_name = 'Voters', api_key = 'keyorzug9EjOu04m9')
+            at1 = Airtable(base_key = '###', table_name = '###', api_key = '###')
             print('AT creds authorized') 
             
             new_vol = df2.loc[df2['id'] == animal, 'Volunteer Name'].iloc[0]
@@ -250,7 +250,7 @@ while True:
             worksheet.update_acell('I2', '=COUNTIF(F:F,"1 - Strong Support") + COUNTIF(F:F,"2 - Lean Support") + COUNTIF(F:F,"3 - Undecided") + COUNTIF(F:F,"4 - Lean Opposed") + COUNTIF(F:F,"5 - Strong Opposed")')
             worksheet.update_acell('G1', '')
             worksheet.update_acell('G2', '')
-            worksheet.update_acell('H4', '=HYPERLINK("https://docs.google.com/document/d/1VObQxGR4D8ssjGzxN74mEwzecpzcIShuVd21nbLS97g/edit?usp=sharing", "How to talk to your friends about Kim Coco!")')
+            worksheet.update_acell('H4', '=HYPERLINK("###", "How to talk to your friends about Kim Coco!")')
             fmt = cellFormat(
             textFormat=textFormat(bold=True, foregroundColor=color(1,0,0), fontSize=14,)
             )
