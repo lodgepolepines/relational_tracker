@@ -6,7 +6,11 @@ The Airtable relational base form has volunteers identifying voters they recogni
 
 **relational_tracker_pull.py**
 
-The script checks Airtable on a set schedule (i.e. every 10 min, 30 min, 1 hr, etc.) for new volunteers and new relational IDs, and pulls data (Voter Name, Address, Phone, Volunteer, and Support Scores) from Airtable for each volunteer in a list and sets it in their respective Google Sheet. Additional relational IDs are appended to the sheet. Every time a new volunteer sheet is created or new relational IDs are made, the volunteer and field director are emailed a notification with a link to the sheet along with instructions. New volunteer spreadsheets are added to a master spreadsheet tracker that contains all active volunteers, contact info, and links to their spreadsheets for the campaign.
+The script checks Airtable on a set schedule (i.e. every 10 min, 30 min, 1 hr, etc.) for new volunteers and new relational IDs, and pulls data (Voter Name, Address, Phone, Volunteer, and Support Scores) from Airtable for each volunteer in a list and sets it in their respective Google Sheet. Additional relational IDs are appended to the sheet. Every time a new volunteer sheet is created or new relational IDs are made, the volunteer and field director are emailed a notification with a link to the sheet along with instructions.
+
+Volunteers only need to update Support Score assessments using the drop-down menu, and bookmark the spreadsheet for future use. The Relational Tracker will update Votebuilder (VAN) with this data. New relational IDs from the Airtable form will be automatically updated in the volunteer Google Sheet.
+
+New volunteer spreadsheets are added to a master spreadsheet tracker that contains all active volunteers, contact info, and links to their spreadsheets for the campaign.
 
 **relational_tracker_push.py (in development)**
 
